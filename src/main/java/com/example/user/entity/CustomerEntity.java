@@ -12,9 +12,9 @@ import java.util.UUID;
 public class CustomerEntity {
 
     @Id
-    @GeneratedValue(generator = "UUID")
-    @GenericGenerator(name ="UUID", strategy = "uuid2")
-    private UUID id;
+//    @GeneratedValue(generator = "UUID")
+//    @GenericGenerator(name ="UUID", strategy = "uuid2")
+    private Long id;
 
     @Column()
     private String name;
