@@ -1,35 +1,42 @@
 package com.example.user.controller;
 
 import com.example.user.dto.Customer;
+import com.example.user.dto.response.ResponseInterface;
+import com.example.user.service.ICustomerService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("customer")
 public class CustomerController {
 
-    @PostMapping()
-    public void createCustomer(@RequestBody Customer customer) {
+    private final ICustomerService customerService;
 
+    public CustomerController(ICustomerService customerService) {
+        this.customerService = customerService;
+    }
+
+    @PostMapping()
+    public ResponseInterface createCustomer(@RequestBody Customer customer) {
+        return this.customerService.createCustomer(customer);
     }
 
     @GetMapping()
-    public void getCustomers() {
-
+    public ResponseInterface getCustomers() {
+        return this.customerService.getCustomers();
     }
 
     @GetMapping("/{id}")
-    public void getCustomer(@PathVariable("id") String id) {
-
+    public ResponseInterface getCustomer(@PathVariable("id") String id) {
+        return this.customerService.getCustomer(id);
     }
 
     @PutMapping("/{id}")
-    public void updateCustomer(@PathVariable("id") String id, @RequestBody Customer customer) {
-
+    public ResponseInterface updateCustomer(@PathVariable("id") String id, @RequestBody Customer customer) {
+        return this.customerService.updateCustomer(id, customer);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteCustomer(@PathVariable("id") String id) {
-
-
+    public ResponseInterface deleteCustomer(@PathVariable("id") String id) {
+        return this.customerService.deleteCustomer(id);
     }
 }
