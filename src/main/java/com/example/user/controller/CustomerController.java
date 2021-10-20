@@ -40,7 +40,7 @@ public class CustomerController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseInterface deleteCustomer(@PathVariable("id") UUID id) {
-        return this.customerService.deleteCustomer(id);
+    public void deleteCustomer(@PathVariable("id") UUID id) {
+        this.customerService.deleteCustomer(id);
     }
 }

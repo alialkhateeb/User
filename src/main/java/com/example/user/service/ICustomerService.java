@@ -16,5 +16,5 @@ public interface ICustomerService {
 
     ResponseInterface updateCustomer(UUID id, Customer customer);
 
-    ResponseInterface deleteCustomer(UUID id);
+    void deleteCustomer(UUID id);
 }
