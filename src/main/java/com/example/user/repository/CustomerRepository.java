@@ -8,5 +8,5 @@ import java.util.UUID;
 
 
 @Repository
-public interface CustomerRepository extends JpaRepository<CustomerEntity, Long> {
+public interface CustomerRepository extends JpaRepository<CustomerEntity, UUID> {
 }

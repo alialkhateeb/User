@@ -6,11 +6,11 @@ import java.util.UUID;
 
 public class Customer implements ResponseInterface {
 
-    private Long id;
+    private UUID id;
 
     private String name;
 
-    public Customer(Long id, String name) {
+    public Customer(UUID id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -19,11 +19,11 @@ public class Customer implements ResponseInterface {
         this.name = name;
     }
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

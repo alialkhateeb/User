@@ -30,17 +30,17 @@ public class CustomerController {
     }
 
     @GetMapping("/{id}")
-    public ResponseInterface getCustomer(@PathVariable("id") Long id) {
+    public ResponseInterface getCustomer(@PathVariable("id") UUID id) {
         return this.customerService.getCustomer(id);
     }
 
     @PutMapping("/{id}")
-    public ResponseInterface updateCustomer(@PathVariable("id") Long id, @RequestBody Customer customer) {
+    public ResponseInterface updateCustomer(@PathVariable("id") UUID id, @RequestBody Customer customer) {
         return this.customerService.updateCustomer(id, customer);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseInterface deleteCustomer(@PathVariable("id") Long id) {
+    public ResponseInterface deleteCustomer(@PathVariable("id") UUID id) {
         return this.customerService.deleteCustomer(id);
     }
 }

@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -35,33 +34,37 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
-    public ResponseInterface getCustomer(Long id) {
+    public ResponseInterface getCustomer(UUID id) {
         Optional<CustomerEntity> entity = this.customerRepository.findById(id);
         if (entity.isPresent()){
             return new Customer(entity.get().getId(), entity.get().getName());
         }
+        //TODO: return error object with 400 (not found)
         return null;
     }
 
     @Override
-    public ResponseInterface updateCustomer(Long id, Customer customer) {
+    public ResponseInterface updateCustomer(UUID id, Customer customer) {
+        System.out.println("test");
         Optional<CustomerEntity> entity = this.customerRepository.findById(id);
         if (entity.isPresent()){
             entity.get().setName(customer.getName());
-            entity.get().setId(customer.getId());
             this.customerRepository.save(entity.get());
             return new Customer(entity.get().getId(), entity.get().getName());
         }
-
+        //TODO: return error object with 400 (not found)
         return null;
     }
 
     @Override
-    public ResponseInterface deleteCustomer(Long id) {
+    public ResponseInterface deleteCustomer(UUID id) {
         Optional<CustomerEntity> entity = this.customerRepository.findById(id);
         if(entity.isPresent()){
             this.customerRepository.deleteById(id);
+            //return empty object with 204
         }
+
+        //TODO: return error object with 400 (not found)
         return null;
     }
 }

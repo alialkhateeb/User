@@ -12,9 +12,9 @@ public interface ICustomerService {
 
     List<ResponseInterface> getCustomers();
 
-    ResponseInterface getCustomer(Long id);
+    ResponseInterface getCustomer(UUID id);
 
-    ResponseInterface updateCustomer(Long id, Customer customer);
+    ResponseInterface updateCustomer(UUID id, Customer customer);
 
-    ResponseInterface deleteCustomer(Long id);
+    ResponseInterface deleteCustomer(UUID id);
 }
