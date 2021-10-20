@@ -17,6 +17,10 @@ public class CustomerEntity {
     @Column()
     private String name;
 
+    @OneToOne(cascade = {CascadeType.ALL} )
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
+    private AddressEntity address;
+
     public CustomerEntity(String name) {
         this.name = name;
     }
