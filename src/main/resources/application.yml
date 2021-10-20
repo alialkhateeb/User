@@ -1,0 +1,24 @@
+spring:
+  datasource:
+#    url: jdbc:h2:mem:testdb
+#    driver-class-name: org.h2.Driver
+#    username: sa
+    url: jdbc:postgresql://localhost:5432/test_db
+    username: root
+    password: root
+    driver-class-name: org.postgresql.Driver
+  jpa:
+#    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        format_sql: true
+  h2:
+    console:
+      enabled: true
+      path: /h2
+
