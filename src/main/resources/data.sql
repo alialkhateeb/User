@@ -1,1 +1,0 @@
-INSERT INTO CustomerEntity VALUES ('123', 'name')
