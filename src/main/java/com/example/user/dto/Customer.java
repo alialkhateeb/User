@@ -10,6 +10,8 @@ public class Customer implements ResponseInterface {
 
     private String name;
 
+    private Address address;
+
     public Customer(UUID id, String name) {
         this.id = id;
         this.name = name;
@@ -33,5 +35,13 @@ public class Customer implements ResponseInterface {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 }

@@ -25,6 +25,11 @@ public class CustomerEntity {
         this.name = name;
     }
 
+    public CustomerEntity(String name, AddressEntity address) {
+        this.name = name;
+        this.address = address;
+    }
+
     public CustomerEntity() {
     }
 
@@ -42,5 +47,13 @@ public class CustomerEntity {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public AddressEntity getAddress() {
+        return address;
+    }
+
+    public void setAddress(AddressEntity address) {
+        this.address = address;
     }
 }
